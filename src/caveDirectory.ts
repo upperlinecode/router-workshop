@@ -28,7 +28,7 @@ export interface CaveNode {
 // };
 
 export const caveDirectory = [
-  { caveId: "Juliet", adjacentCaverns: ["Delta", "Oscar", "Kilo"] },
+  { caveId: "Juliet", adjacentCaverns: ["Kilo", "Delta", "Oscar"] },
   { caveId: "Kilo", adjacentCaverns: ["Bravo", "Lima"] },
   { caveId: "Bravo", adjacentCaverns: [] },
   { caveId: "Lima", adjacentCaverns: ["Alpha"] },

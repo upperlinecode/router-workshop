@@ -19,7 +19,12 @@ const Cave = () => {
             <button>Proceed to {neighbor} cavern</button>
           </Link>
         ))}
-        {caveId === "Yankee" && <div>YOU WIN</div>}
+        {caveId === "Yankee" && (
+          <div>
+            <p>You see a message inscribed on the far wall of the cave:</p>
+            <h3>You've arrived in the deepest cavern.</h3>
+          </div>
+        )}
       </CaveButtons>
     </CaveRoot>
   );

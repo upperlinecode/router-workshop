@@ -7,15 +7,9 @@ const Nav = () => (
       <Headline>Cave Adventure</Headline>
     </Link>
     <NavOptions>
-      <Link to="/">
-        <NavButton>Home</NavButton>
-      </Link>
-      <Link to="/Shop">
-        <NavButton>Shop</NavButton>
-      </Link>
-      <Link to="/Caves">
-        <NavButton>Caves</NavButton>
-      </Link>
+      <NavButton>Home</NavButton>
+      <NavButton>Shop</NavButton>
+      <NavButton>Caves</NavButton>
     </NavOptions>
   </NavRoot>
 );

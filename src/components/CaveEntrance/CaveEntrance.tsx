@@ -1,9 +1,12 @@
 import { CaveEntranceRoot } from "./CaveEntrance.styles";
+import { Link } from "react-router-dom";
 
 const CaveEntrance = () => (
   <CaveEntranceRoot>
     <h3>CaveEntrance</h3>
-    <button>Click here to enter the cave</button>
+    <Link to="/caves/juliet">
+      <button>Click here to enter the cave</button>
+    </Link>
   </CaveEntranceRoot>
 );
 

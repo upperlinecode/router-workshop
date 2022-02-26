@@ -52,8 +52,8 @@ Let's solve the problem we created earlier and use the App component to control 
 At this point, the following slugs should exhibit the following behavior:
 
 - `/` should display the Nav and the Home component.
-- `/Shop` should display the Nav and the Shop.
-- `/Caves` should display the Nav and the CaveEntrance.
+- `/shop` should display the Nav and the Shop.
+- `/caves` should display the Nav and the CaveEntrance.
 - `/anything-else` would display just the Nav and nothing else (though this isn't the intended final behavior, it should work for any non-matching pattern).
 
 ### 3. Add a client-side redirect
@@ -71,7 +71,7 @@ React Router's `Link` components will allow your user to route through your appl
 
 ### 5. Adding Individual Cave Routes
 
-There are 21 individual caves (as demonstrated in the `caveDirectory.ts` file) - you'll need to figure out how to render out specific caves if you visit their corresponding route. For example, the slug `/Caves/Juliet` should render out a Cave component for Juliet, showing the neighbors as clickable buttons.
+There are 21 individual caves (as demonstrated in the `caveDirectory.ts` file) - you'll need to figure out how to render out specific caves if you visit their corresponding route. For example, the slug `/caves/juliet` should render out a Cave component for Juliet, showing the neighbors as clickable buttons.
 
 You could create 21 individual routes, but you can already guess how unpleasant that would be. Instead, use a [URL Param](https://reactrouter.com/docs/en/v6/getting-started/tutorial#reading-url-params) to dynamically render a Cave for any possible code.
 

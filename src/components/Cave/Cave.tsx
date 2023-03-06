@@ -1,8 +1,9 @@
+import { Link, useParams } from "react-router-dom";
 import { CaveRoot, CaveButtons } from "./Cave.styles";
 import { caveDirectory } from "../../caveDirectory";
 
 const Cave = () => {
-  const caveId = "juliet";
+  const { caveId } = useParams<{ caveId: string }>();
   const cave = caveDirectory.find((cave) => cave.caveId === caveId) || {
     caveId: "the void",
     adjacentCaverns: [],
@@ -11,7 +12,11 @@ const Cave = () => {
     <CaveRoot>
       <h3>You've reached {cave.caveId} cavern</h3>
       <CaveButtons>
-        <button>Cave tunnels under construction</button>
+        {cave.adjacentCaverns.map((cavern) => (
+          <Link to={`/caves/${cavern}`}>
+            <button>{`Cave tunnel to ${cavern}`}</button>
+          </Link>
+        ))}
       </CaveButtons>
     </CaveRoot>
   );

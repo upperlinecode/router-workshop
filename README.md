@@ -58,10 +58,10 @@ At this point, the following slugs should exhibit the following behavior:
 
 ### 3. Add a client-side redirect
 
-Right now, you'll notice that the `/anything-else` behavior is a little unsettling - it feels like it's worth either a 404 component for any [non-matching pattern](https://reactrouter.com/en/6.8.2/start/tutorial#handling-not-found-errors), or a redirect that sends you back to home. You're welcome to implement either of the following two behaviors:
+Right now, you'll notice that the `/anything-else` behavior is a little unsettling - it feels like it's worth either a 404 component for any [non-matching pattern](https://reactrouter.com/en/6.8.2/start/tutorial#handling-not-found-errors), or a [redirect](https://reactrouter.com/en/6.8.2/fetch/redirect#redirect) that sends you back to home. You're welcome to implement either of the following two behaviors: --> lets also explain the default behavior
 
 - Redirect any non-matching pattern to a `/not-found`. Then add a corresponding route and render out a message that indicates that this is what has happened.
-- Redirect any non-matching pattern to `/`, which has already been defined.
+- Redirect any non-matching pattern to `/` using the `Navigation` [component](https://reactrouter.com/en/6.8.2/components/navigate), which has already been defined.
 
 ### 4. Activate the Nav Bar
 

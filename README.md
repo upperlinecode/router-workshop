@@ -47,11 +47,13 @@ Be sure to look through the `Cave.tsx` and `caveDirectory.js`, as they include s
 
 Implement the `createBrowserRouter` & `RouteProvider` in your `index.tsx` as demonstrated in the [Tutorial](https://reactrouter.com/en/6.8.2/start/tutorial#adding-a-router).
 
-Include the following routes:
+Include the three following routes:
 
 - "/" should render the Home component.
 - "/shop" should render the Shop component.
 - "/caves" should render the CaveEntrance component.
+
+> Note: Do not nest routes yet - that will come in step 2.
 
 If you do this correctly, **you'll no longer render out your `App` component at all**, and so you won't be able to see your `Nav` at all. We'll solve this in the next exercise. Since the navbar is not functional yet, and since it won't even display through any of these routes, You can confirm that this worked by checking whether "http://localhost:3000/Shop" renders the Shop component as intended.
 
@@ -78,7 +80,7 @@ React Router's `Link` components will allow your user to route through your appl
 
 Right now, you'll notice that the `/anything-else` behavior is less than perfect - it feels like it's worth either a more fully built 404 component for any [non-matching pattern](https://reactrouter.com/en/6.8.2/start/tutorial#handling-not-found-errors), or a redirect that sends you back to home. You're welcome to implement any of the following behaviors:
 
-- Create a "<NotFound>" component and render it when a match is not found.
+- Create a `<NotFound \>` component and render it when a match is not found. An even lower complexity solution is just to render a "Not Found" inside a `<p>` element.
 - Redirect any non-matching pattern to a `/not-found`. Then add a corresponding route and render out a message that indicates that this is what has happened.
 - Redirect any non-matching pattern to `/`, which has already been defined.
 
@@ -86,7 +88,11 @@ Right now, you'll notice that the `/anything-else` behavior is less than perfect
 
 There are 21 individual caves (as demonstrated in the `caveDirectory.ts` file) - you'll need to figure out how to render out specific caves if you visit their corresponding route. For example, the slug `/caves/juliet` should render out a Cave component for Juliet, showing the neighbors as clickable buttons.
 
-You could create 21 individual routes, but you can already guess how unpleasant that would be. Instead, use a [URL Param](https://reactrouter.com/en/6.8.2/start/tutorial#url-params-in-loaders) to dynamically render a Cave for any possible code - you can test this by accessing the `/caves/juliet` and `/caves/bravo` routes. Don't worry about the fact that both cave components currently display as `Juliet` cavern regardless of the route used to get there - we'll fix that in the next step.
+You could create 21 individual routes, but you can already guess how unpleasant that would be. Instead, use a [URL Param](https://reactrouter.com/en/6.8.2/start/tutorial#url-params-in-loaders) to dynamically render a `<Cave/>` for any route that starts with `/cave`.
+
+> Note: Don't worry about the `loader` yet! Just focus on adjusting your router object in your `index.tsx` to account for `/cave/something` routes.
+
+**You can test this by accessing the `/caves/juliet` and `/caves/bravo` routes**. Don't worry about the fact that both cave components currently display as `Juliet` cavern regardless of the route used to get there - we'll fix that in the next step.
 
 ### 6. Access the Params in a Cave component.
 

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { AppRoot } from "./App.styles";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -8,9 +9,7 @@ const App = () => {
   return (
     <AppRoot>
       <Nav />
-      <Home />
-      <Shop />
-      <CaveEntrance />
+      <Outlet />
     </AppRoot>
   );
 };

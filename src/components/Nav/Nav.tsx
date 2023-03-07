@@ -7,9 +7,15 @@ const Nav = () => (
       <Headline>Cave Adventure</Headline>
     </Link>
     <NavOptions>
-      <NavButton>Home</NavButton>
-      <NavButton>Shop</NavButton>
-      <NavButton>Caves</NavButton>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <NavButton>Home</NavButton>
+      </Link>
+      <Link to="/Shop" style={{ textDecoration: "none" }}>
+        <NavButton>Shop</NavButton>
+      </Link>
+      <Link to="/Caves" style={{ textDecoration: "none" }}>
+        <NavButton>Caves</NavButton>
+      </Link>
     </NavOptions>
   </NavRoot>
 );

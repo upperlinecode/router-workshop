@@ -33,21 +33,21 @@ Go ahead and play [this mostly-finished version](https://cave-routes.netlify.app
 
 Let's get to work building it.
 
-The app itself relies on topics shared in the [React Router tutorial](https://reactrouter.com/docs/en/v6/getting-started/tutorial), and the exercises include links to parts of that tutorial throughout. You may be able to understand the tutorial better if you explore [their finished app](https://stackblitz.com/edit/github-agqlf5?file=src/App.jsx) too, with special attention to your browser's address bar.
+The app itself relies on topics shared in the [React Router tutorial](https://reactrouter.com/en/6.8.2/start/tutorial), and the exercises include links to parts of that tutorial throughout. You may be able to understand the tutorial better if you explore [their finished app](https://stackblitz.com/edit/github-agqlf5?file=src/App.jsx) too, with special attention to your browser's address bar.
 
 ## Exercises
 
 ### 1. Add some Routes!
 
-Implement the `BrowserRouter`, `Routes`, & `Route` components in your `index.tsx` with routes for "/", "/Shop", and "/Caves" that render out the Home, Shop, and CaveEntrance components respectively. You can see an example of what this implementation looks like in the [Tutorial](https://reactrouter.com/docs/en/v6/getting-started/tutorial#add-some-routes). You can confirm that this worked by confirming that "http://localhost:3000/Shop" renders the Shop component.
+Implement the `BrowserRouter`, `Routes`, & `Route` components in your `index.tsx` with routes for "/", "/Shop", and "/Caves" that render out the Home, Shop, and CaveEntrance components respectively. You can see an example of what this implementation looks like in the [Tutorial](https://reactrouter.com/en/6.8.2/start/tutorial#adding-a-router). You can confirm that this worked by confirming that "http://localhost:3000/Shop" renders the Shop component.
 
 If you do this correctly, you'll no longer render out your `App` component at all, and so you won't be able to see your `Nav` at all. We'll solve this in the next exercise.
 
-> Note that if you've used an earlier version of 'react-router-dom' before this, you're probably used to a `Switch` component which matches routes in order. The Switch has been deprecated and replaced with the plural `Routes` component, as [explained in their documentation](https://reactrouter.com/docs/en/v6/upgrading/v5#upgrade-all-switch-elements-to-routes).
+> Note that if you've used an earlier version of 'react-router-dom' before this, you're probably used to a `Switch` component which matches routes in order. The Switch has been deprecated and replaced with the plural `Routes` component, as [explained in their documentation](https://reactrouter.com/en/6.8.2/upgrading/v5#upgrade-all-switch-elements-to-routes).
 
 ### 2. Nest each Route and add a Nav.
 
-Let's solve the problem we created earlier and use the App component to control our layout. We want the Nav to appear on each page at the top, so [reference the tutorial](https://reactrouter.com/docs/en/v6/getting-started/tutorial#nested-routes) to see how that can be done by nesting a each of your three Routes within another Route. You'll need to use an `Outlet` as part of the App component.
+Let's solve the problem we created earlier and use the App component to control our layout. We want the Nav to appear on each page at the top, so [reference the tutorial](https://reactrouter.com/en/6.8.2/start/tutorial#nested-routes) to see how that can be done by nesting a each of your three Routes within another Route. You'll need to use an `Outlet` as part of the App component.
 
 At this point, the following slugs should exhibit the following behavior:
 
@@ -58,7 +58,7 @@ At this point, the following slugs should exhibit the following behavior:
 
 ### 3. Add a client-side redirect
 
-Right now, you'll notice that the `/anything-else` behavior is a little unsettling - it feels like it's worth either a 404 component for any [non-matching pattern](https://reactrouter.com/docs/en/v6/getting-started/tutorial#adding-a-no-match-route), or a redirect that sends you back to home. You're welcome to implement either of the following two behaviors:
+Right now, you'll notice that the `/anything-else` behavior is a little unsettling - it feels like it's worth either a 404 component for any [non-matching pattern](https://reactrouter.com/en/6.8.2/start/tutorial#handling-not-found-errors), or a redirect that sends you back to home. You're welcome to implement either of the following two behaviors:
 
 - Redirect any non-matching pattern to a `/not-found`. Then add a corresponding route and render out a message that indicates that this is what has happened.
 - Redirect any non-matching pattern to `/`, which has already been defined.
@@ -67,17 +67,17 @@ Right now, you'll notice that the `/anything-else` behavior is a little unsettli
 
 So far we've done all our navigating via directly typing things into the address bar. You _could_ use standard `<a>` links to wire up the buttons on the Navbar and replicate that behavior, but your browser would reload the entire react application each time you used them - that's bad for performance and for state management.
 
-React Router's `Link` components will allow your user to route through your application without sacrificing React's performance. Refer to [the example](https://reactrouter.com/docs/en/v6/getting-started/tutorial#add-some-links) and then wrap the NavButtons in Link components that each route to the correct destination.
+React Router's `Link` components will allow your user to route through your application without sacrificing React's performance. Refer to [the example](https://reactrouter.com/en/6.8.2/start/tutorial#client-side-routing) and then wrap the NavButtons in Link components that each route to the correct destination.
 
 ### 5. Adding Individual Cave Routes
 
 There are 21 individual caves (as demonstrated in the `caveDirectory.ts` file) - you'll need to figure out how to render out specific caves if you visit their corresponding route. For example, the slug `/caves/juliet` should render out a Cave component for Juliet, showing the neighbors as clickable buttons.
 
-You could create 21 individual routes, but you can already guess how unpleasant that would be. Instead, use a [URL Param](https://reactrouter.com/docs/en/v6/getting-started/tutorial#reading-url-params) to dynamically render a Cave for any possible code.
+You could create 21 individual routes, but you can already guess how unpleasant that would be. Instead, use a [URL Param](https://reactrouter.com/en/6.8.2/start/tutorial#url-params-in-loaders) to dynamically render a Cave for any possible code.
 
 ### 6. Access the Params in a Cave component.
 
-You'll see how right now, any Cave renders as if it's Juliet, no matter what caveID is passed to it. That's because we've hard-coded in that caveId. Referencing [the example](https://reactrouter.com/docs/en/v6/getting-started/tutorial#reading-url-params), use the `useParams()` function to extract the caveId from the URL and render out the appropriate cave.
+You'll see how right now, any Cave renders as if it's Juliet, no matter what caveID is passed to it. That's because we've hard-coded in that caveId. Referencing [the example](https://reactrouter.com/en/6.8.2/start/tutorial#url-params-in-loaders), use the `useParams()` function to extract the caveId from the URL and render out the appropriate cave.
 
 ### 7. Practice with the Cave
 
